@@ -33,9 +33,9 @@ if not exist "%installPath%" (
     )
 )
 
-if "%version%"=="1" set "url=https://raw.githubusercontent.com/Nexsq/nexsqs_useless_ui/main/v1.0/nuui_1-0.bat"
-if "%version%"=="2" set "url=https://raw.githubusercontent.com/Nexsq/nexsqs_useless_ui/main/v2.0/nuui_2-0.bat"
-if "%version%"=="3" set "url=https://raw.githubusercontent.com/Nexsq/nexsqs_useless_ui/main/v3.0/nuui_3-0.exe"
+if "%version%"=="1" set "url=https://raw.githubusercontent.com/Nexsq/nuui/main/v1.0/nuui_1-0.bat"
+if "%version%"=="2" set "url=https://raw.githubusercontent.com/Nexsq/nuui/main/v2.0/nuui_2-0.bat"
+if "%version%"=="3" set "url=https://raw.githubusercontent.com/Nexsq/nuui/main/v3.0/nuui_3-0.exe"
 
 if "%version%"=="1" set "outputFile=nuui_1-0.bat"
 if "%version%"=="2" set "outputFile=nuui_2-0.bat"
@@ -98,7 +98,7 @@ if "%version%"=="3" (
         set "psCommand=!psCommand! Write-Host '';"
         set "psCommand=!psCommand! Write-Host '[+] Downloading custom plugins' -ForegroundColor DarkYellow;"
         set "psCommand=!psCommand! Write-Host '';"
-        set "psCommand=!psCommand! $apiUrl = 'https://api.github.com/repos/Nexsq/nexsqs_useless_ui/contents/custom';"
+        set "psCommand=!psCommand! $apiUrl = 'https://api.github.com/repos/Nexsq/nuui/contents/custom';"
         set "psCommand=!psCommand! try {"
         set "psCommand=!psCommand!     $items = Invoke-RestMethod -Uri $apiUrl -UseBasicParsing;"
         set "psCommand=!psCommand!     foreach ($item in $items) {"
@@ -122,4 +122,5 @@ powershell -noprofile -executionpolicy bypass -command "!psCommand!"
 
 echo.
 pause
+
 endlocal
